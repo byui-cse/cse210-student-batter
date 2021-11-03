@@ -1,78 +1,90 @@
-class Point:
-    """Represents distance from an origin (0, 0).
+from game import constants
+from game.point import Point
+
+class Actor:
+    """A visible, moveable thing that participates in the game. The responsibility of Actor is to keep track of its appearance, position 
+    and velocity in 2d space.
 
     Stereotype:
         Information Holder
 
     Attributes:
-        _x (integer): The horizontal distance.
-        _y (Point): The vertical distance.
+        _tag (string): The actor's tag.
+        _text (string): The textual representation of the actor.
+        _position (Point): The actor's position in 2d space.
+        _velocity (Point): The actor's speed and direction.
     """
+
+    def __init__(self):
+        """The class constructor."""
+        self._description = ""
+        self._text = ""
+        self._tag = "" 
+        self._position = Point(0, 0)
+        self._velocity = Point(0, 0)
+
+    def get_description(self):
+        """Gets the artifact's description.
+        
+        Returns:
+            string: The artifact's description.
+        """
+        return self._description 
+
+    def get_position(self):
+        """Gets the actor's position in 2d space.
+        
+        Returns:
+            Point: The actor's position in 2d space.
+        """
+        return self._position
     
-    def __init__(self, x, y):
-        """The class constructor.
+    def get_text(self):
+        """Gets the actor's textual representation.
+        
+        Returns:
+            string: The actor's textual representation.
+        """
+        return self._text
+
+    def get_velocity(self):
+        """Gets the actor's speed and direction.
+        
+        Returns:
+            Point: The actor's speed and direction.
+        """
+        return self._velocity
+    
+    def set_description(self, description):
+        """Updates the actor's description to the given one.
         
         Args:
-            x (integer): A horizontal distance.
-            y (integer): A vertical distance.
+            description (string): The given description.
         """
-        self._x = x
-        self._y = y
+        self._description = description
 
-    def add(self, other):
-        """Gets a new point that is the sum of this and the given one.
-
+    def set_position(self, position):
+        """Updates the actor's position to the given one.
+        
         Args:
-            other (Point): The Point to add.
-
-        Returns:
-            Point: A new Point that is the sum.
+            position (Point): The given position.
         """
-        x = self._x + other.get_x()
-        y = self._y + other.get_y()
-        return Point(x, y)
-
-    def equals(self, other):
-        """Whether or not this Point is equal to the given one.
-
+        self._position = position
+    
+    def set_text(self, text):
+        """Updates the actor's text to the given value.
+        
         Args:
-            other (Point): The Point to compare.
+            text (string): The given value.
+        """
+        self._text = text
 
-        Returns: 
-            boolean: True if both x and y are equal; false if otherwise.
-        """
-        return self._x == other.get_x() and self._y == other.get_y()
-
-    def get_x(self):
-        """Gets the horizontal distance.
+    def set_velocity(self, velocity):
+        """Updates the actor's velocity to the given one.
         
-        Returns:
-            integer: The horizontal distance.
+        Args:
+            position (Point): The given velocity.
         """
-        return self._x
-
-    def get_y(self):
-        """Gets the vertical distance.
-        
-        Returns:
-            integer: The vertical distance.
-        """
-        return self._y
-
-    def is_zero(self):
-        """Whether or not the point is zero or x = 0 and y = 0.
-        
-        Returns:
-            boolean: True if x = 0 and y = 0; false if otherwise.
-        """
-        return self._x == 0 and self._y == 0
-        
-    def reverse(self):
-        """Gets a new Point that is the reverse of this one.
-        
-        Returns:
-            Point: A new Point that is reversed.
-        """
-        x = self._x * -1
-        y = self._y * -1
-        return Point(x, y)
+        self._velocity = velocity
+    def set_tag(self, tag):
+        self._tag = tag
