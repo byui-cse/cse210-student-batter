@@ -1,6 +1,7 @@
 import random
 from game import constants
 from game.action import Action
+from game.point import Point
 
 class HandleCollisionsAction(Action):
     """A code template for handling collisions. The responsibility 
@@ -18,7 +19,16 @@ class HandleCollisionsAction(Action):
         """
         bricks = cast["brick"] # there's only one
         paddle = cast["paddle"][0] # there's only one
-        bricks = cast["brick"]
+        ball = cast["ball"][0]
         for brick in bricks:
-            if paddle.get_position().equals(bricks.get_position()):
-                print("HIT")
+            if ball.get_position().equals(brick.get_position()):
+                brick.set_text("")
+                ball.set_velocity(Point(-1, 1))
+
+        balPos = ball.get_position()
+        if balPos.get_x() == constants.MAX_X or balPos.get_x() == 0 or balPos.get_y() == constants.MAX_Y:
+            pass
+
+        if balPos.get_y() == 0:
+            quit()
+
