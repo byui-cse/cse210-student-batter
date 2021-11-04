@@ -27,7 +27,6 @@ class Director:
         self._cast = cast
         self._script = script
         self._keep_playing = True
-        #self._final_Text = "Game over."
         
         
     def start_game(self):
