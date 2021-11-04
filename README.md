@@ -24,9 +24,20 @@ click the "run" icon.
 ---
 The project files and folders are organized as follows:
 ```
-root                    (project root folder)
-+-- batter              (source code for game)
-  +-- game              (specific game classes)
+root                                  (project root folder)
++-- batter                            (source code for game)
+  +-- game                            (specific game classes)
+    +-- action.py                     (Controller)
+    +-- actor.py                      (Information Holder)
+    +-- constants.py                  (Game Constants)
+    +-- control_actors_action.py      (Controller)
+    +-- director.py                   (Controller)
+    +-- draw_actors_action.py         (Controller)
+    +-- handle_collisions_action.py   (Controller)
+    +-- input_service.py              (Service Provider)
+    +-- move_actors_action.py         (Controller)
+    +-- output_service.py             (Service Provider)
+    +-- point.py                      (Information Holder)
   +-- __init__.py       (python package file)
   +-- __main__.py       (entry point for program)
 +-- README.md           (general info)
@@ -39,4 +50,4 @@ root                    (project root folder)
 
 ## Authors
 ---
-* # TODO: Add your names and emails here
+* Bryndi Hellewell - brynlol12@gmail.com
