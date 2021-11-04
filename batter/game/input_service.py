@@ -18,7 +18,10 @@ class InputService:
     """
 
     def __init__(self, screen):
-        """The class constructor."""
+        """The class constructor.
+        Args:
+            screen (Screen): An instance of Screen
+        """
         self._screen = screen
         self._keys = {}
         
