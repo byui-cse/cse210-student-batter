@@ -54,9 +54,6 @@ class Actor:
             Point: The actor's speed and direction.
         """
         return self._velocity
-
-    def get_tag(self):
-        return self._tag
     
     def set_description(self, description):
         """Updates the actor's description to the given one.
@@ -89,6 +86,3 @@ class Actor:
             position (Point): The given velocity.
         """
         self._velocity = velocity
-
-    def set_tag(self, tag):
-        self._tag = tag
