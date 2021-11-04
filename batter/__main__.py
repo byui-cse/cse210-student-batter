@@ -84,6 +84,7 @@ def main(screen):
     script["output"] = [draw_actors_action]
 
     # start the game
+    output_service.open_window("Batter - or Bricks - ")
     director = Director(cast, script)
     director.start_game()
 
