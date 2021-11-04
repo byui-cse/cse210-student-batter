@@ -21,7 +21,12 @@ class Actor:
     """
 
     def __init__(self):
-        """The class constructor."""
+        """The class constructor.
+        
+        Args:
+          self (Actor): an instance of Actor.
+
+        """
         self._color = 'white'
         self._description = ""
         self._text = ""
@@ -30,6 +35,10 @@ class Actor:
 
     def get_description(self):
         """Gets the artifact's description.
+
+         Args:
+          self (Actor): an instance of Actor.
+
         
         Returns:
             string: The artifact's description.
@@ -38,6 +47,10 @@ class Actor:
 
     def get_position(self):
         """Gets the actor's position in 2d space.
+
+         Args:
+          self (Actor): an instance of Actor.
+
         
         Returns:
             Point: The actor's position in 2d space.
@@ -46,6 +59,10 @@ class Actor:
     
     def get_text(self):
         """Gets the actor's textual representation.
+
+         Args:
+          self (Actor): an instance of Actor.
+
         
         Returns:
             string: The actor's textual representation.
@@ -54,6 +71,10 @@ class Actor:
 
     def get_velocity(self):
         """Gets the actor's speed and direction.
+
+         Args:
+          self (Actor): an instance of Actor.
+
         
         Returns:
             Point: The actor's speed and direction.
@@ -62,6 +83,9 @@ class Actor:
 
     def get_color(self):
         """Gets the actor's color.
+
+         Args:
+          self (Actor): an instance of Actor.
         
         Returns:
             color (string): The actor's color.
@@ -72,6 +96,7 @@ class Actor:
         """Updates the actor's color to the given one.
         
         Args:
+            self (Actor): an instance of Actor.
             color (string): The given color.
         """
         self._color = color
@@ -80,6 +105,7 @@ class Actor:
         """Updates the actor's description to the given one.
         
         Args:
+            self (Actor): an instance of Actor.
             description (string): The given description.
         """
         self._description = description
@@ -88,6 +114,7 @@ class Actor:
         """Updates the actor's position to the given one.
         
         Args:
+            self (Actor): an instance of Actor
             position (Point): The given position.
         """
         self._position = position
@@ -96,6 +123,7 @@ class Actor:
         """Updates the actor's text to the given value.
         
         Args:
+            self (Actor): an instance of Actor.
             text (string): The given value.
         """
         self._text = text
@@ -104,6 +132,7 @@ class Actor:
         """Updates the actor's velocity to the given one.
         
         Args:
+            self (Actor): an instance of Actor.
             position (Point): The given velocity.
         """
         self._velocity = velocity

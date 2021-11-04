@@ -63,15 +63,15 @@ class Point:
         return self._y
 
     def is_zero(self):
-        """Whether or not the point is zero or x = 0 and y = 0.
+        """Whether or not the point is zero or x is equal to 0 and y is equal to 0.
         
         Returns:
-            boolean: True if x = 0 and y = 0; false if otherwise.
+            boolean: True if x is equal to  0 and y is equal to 0; false if otherwise.
         """
         return self._x == 0 and self._y == 0
 
     def random_velocity_generator(self):
-        """
+        """Give a random x value to horizontal velocity (self._x)
         
         Args:
             self (Point): A point
