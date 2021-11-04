@@ -11,7 +11,7 @@ class DrawActorsAction(Action):
         Controller
 
     Attributes:
-        
+        _output_service (OutputService): An instance of OutputService.        
     """
 
     def __init__(self, output_service):
