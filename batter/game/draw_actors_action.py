@@ -23,6 +23,7 @@ class DrawActorsAction(Action):
         Attributes:
             _output_service (OutputService): An instance of OutputService.
         '''
+        self._ouput_service = output_service
 
     def execute(self, cast):
         '''
@@ -31,3 +32,7 @@ class DrawActorsAction(Action):
         Args:
             cast (dict): The game actors {key: tag, value: list}.
         '''
+        self._output_service.clear_screen()
+        for group in cast.values():
+            self._output_service.draw_actors(group)
+        self._output_service.flush_buffer()
