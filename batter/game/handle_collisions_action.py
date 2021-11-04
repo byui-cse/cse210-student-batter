@@ -23,16 +23,14 @@ class HandleCollisionsAction(Action):
         # self.ball_ceiling_collision(cast)
         # self.ball_floor_collision(cast)
 
-    def ball_brick_collision(self,cast):
+    def ball_brick_collision(self, cast):
         bricks = cast["brick"] # there's only one
         paddle = cast["paddle"][0] # there's only one
         ball = cast["ball"][0]
         for brick in bricks:
             if ball.get_position().equals(brick.get_position()):
-                ball.get_velocity().reverse_y()
-                ball.set_velocity(Point(1,- 1))
-                #brick.set_text("")
-                cast["brick"].remove(brick)
+                brick.set_text("")
+                ball.set_velocity(Point(-1, 1))
 
     def paddle_constraints(self, paddle):
         pass
