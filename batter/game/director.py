@@ -32,7 +32,7 @@ class Director:
      
     def start_game(self):
         """Starts the game loop to control the sequence of play."""
-        
+        #main loop of the game
         while self._keep_playing:
             self._cue_action("input")
             self._cue_action("update")
@@ -41,6 +41,7 @@ class Director:
             self._keep_playing = self._script["update"][1].checkPlay()
             sleep(constants.FRAME_LENGTH)
 
+        #messages at the end
         final_score = self._cast["score"][0]._points
         self._cast = {} 
 
