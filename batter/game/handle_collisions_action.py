@@ -1,5 +1,5 @@
 import random
-from batter.game.constants import MAX_X, MAX_Y
+from game.constants import MAX_X, MAX_Y
 from game import constants
 from game.action import Action
 from game.point import Point
@@ -20,23 +20,23 @@ class HandleCollisionsAction(Action):
         ball = cast["ball"][0] # there's only one
         paddle = cast["paddle"][0] # there's only one
         bricks = cast["brick"]
-        
+        '''
         for brick in bricks:
             if ball.get_position().equals(brick.get_position()):
-                ball.set_velocity(self.point.bounce_X)
+                ball.set_velocity(Point.reverse(self))
 
         #If ball bounces off paddle:
         if paddle.get_position().equals(ball.get_position()):
-            ball.set_velocity(Point(self.point.bounce_X))
+            ball.set_velocity(Point.bounce_X)
         
         #If ball bounces off right wall:
-        if ball.get_position().equals(MAX_X, self.point.get_y):
-            ball.set_velocity(Point(self.point.bounce_Y))
+        if ball.get_position() == (MAX_X):
+            ball.set_velocity(Point.bounce_Y)
 
         #If ball bounces off left wall:
-        if ball.get_position().equals(Point(self.point.get_x), 4):
-            ball.set_velocity(Point(self.point.bounce_Y))
+        if ball.get_position() == (Point.get_x, 4):
+            ball.set_velocity(Point.bounce_Y)
 
         #If ball bounces off ceiling:
-        if ball.get_position().equals(Point(1, self.point.bounce_Y)):
-            ball.set_velocity(Point(self.point.bounce_X))
+        if ball.get_position().equals(Point(1, Point.bounce_Y)):
+            ball.set_velocity(Point.bounce_X)'''

@@ -21,9 +21,11 @@ class ControlActorsAction(Action):
         self._input_service = input_service
 
     def execute(self, cast):
-        """Executes the action using the given actors. In this case the only actor we
-        will move is the bat
+        """Executes the action using the given actors.
 
         Args:
             cast (dict): The game actors {key: tag, value: list}.
         """
+        direction = self._input_service.get_direction()
+        paddle = cast["paddle"][0] # there's only one in the cast
+        paddle.set_velocity(direction)        
