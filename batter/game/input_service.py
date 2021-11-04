@@ -27,9 +27,10 @@ class InputService:
         
     def get_direction(self):
         """Gets the selected direction for the given player.
-
+        Args:
+            self (InputService): An instance of InputService
         Returns:
-            Point: The selected direction.
+            direction (Point): The selected direction.
         """
         direction = Point(0, 0)
         event = self._screen.get_event()
