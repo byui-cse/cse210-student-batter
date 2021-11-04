@@ -1,4 +1,5 @@
-""" 
+""" Imports Action from game.action
+A class of DrawActorsAction.
 """
 from game.action import Action
 

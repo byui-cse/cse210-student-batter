@@ -1,4 +1,5 @@
-""" 
+""" imports constants from game. Imports frame from asciimatics.widgets.
+A class of OutputService.
 """
 import sys
 from game import constants

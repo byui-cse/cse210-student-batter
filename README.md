@@ -40,3 +40,4 @@ root                    (project root folder)
 ## Authors
 ---
 * Julio Rubio | esc18010@byui.edu
+* Paul Oranye | ora21001@byui.edu

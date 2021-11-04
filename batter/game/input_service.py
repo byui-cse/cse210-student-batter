@@ -1,4 +1,5 @@
-""" 
+""" Imports point from game.point. Imports keyboardEvent from asciimatics.event.
+A class of InputService which is responsible with detection and communication of player key clicks.
 """
 import sys
 from game.point import Point
