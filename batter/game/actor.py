@@ -1,6 +1,6 @@
-""" Actor module
-Contains Actor class and associated utilities. Used in
-adding elements to the gameplay and managing in-game objects.
+""" Module actor containing class Actor and its corresponding
+methods.It is used to add elements to the gameplay and manage
+objects in the game.
 """
 from game import constants
 from game.point import Point
@@ -13,11 +13,11 @@ class Actor:
         Information Holder
 
     Attributes:
-        _description (string):
+        #_description (string):
+        _color (string): The actor's color.
         _text (string): The textual representation of the actor.
         _position (Point): The actor's position in 2d space.
         _velocity (Point): The actor's speed and direction.
-        _color (string): The actor's color.
     """
 
     def __init__(self):
@@ -28,22 +28,22 @@ class Actor:
 
         """
         self._color = 'white'
-        self._description = ""
+        #self._description = ""
         self._text = ""
         self._position = Point(0, 0)
         self._velocity = Point(0, 0)
 
-    def get_description(self):
-        """Gets the artifact's description.
+#     def get_description(self):
+#         """Gets the artifact's description.
 
-         Args:
-          self (Actor): an instance of Actor.
+#          Args:
+#           self (Actor): an instance of Actor.
 
         
-        Returns:
-            string: The artifact's description.
-        """
-        return self._description 
+#         Returns:
+#             string: The artifact's description.
+#         """
+#         return self._description 
 
     def get_position(self):
         """Gets the actor's position in 2d space.
@@ -51,7 +51,6 @@ class Actor:
          Args:
           self (Actor): an instance of Actor.
 
-        
         Returns:
             Point: The actor's position in 2d space.
         """
@@ -63,7 +62,6 @@ class Actor:
          Args:
           self (Actor): an instance of Actor.
 
-        
         Returns:
             string: The actor's textual representation.
         """
@@ -75,7 +73,6 @@ class Actor:
          Args:
           self (Actor): an instance of Actor.
 
-        
         Returns:
             Point: The actor's speed and direction.
         """
@@ -101,14 +98,14 @@ class Actor:
         """
         self._color = color
         
-    def set_description(self, description):
-        """Updates the actor's description to the given one.
+#     def set_description(self, description):
+#         """Updates the actor's description to the given one.
         
-        Args:
-            self (Actor): an instance of Actor.
-            description (string): The given description.
-        """
-        self._description = description
+#         Args:
+#             self (Actor): an instance of Actor.
+#             description (string): The given description.
+#         """
+#         self._description = description
 
     def set_position(self, position):
         """Updates the actor's position to the given one.
