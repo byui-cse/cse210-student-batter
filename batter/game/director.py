@@ -5,7 +5,6 @@ from typing import final
 from game import constants, handle_collisions_action
 from game.actor import Actor
 from game.point import Point
-#from game.score import Score
 
 class Director:
     """A code template for a person who directs the game. The responsibility of 
