@@ -34,8 +34,8 @@ root                    (project root folder)
 
 ## Required Technologies
 ---
-* Python 3.8.0
-* Asciimatics 1.12.0
+* Python 3.9.6
+* Asciimatics 1.13.0
 
 ## Authors
 ---
