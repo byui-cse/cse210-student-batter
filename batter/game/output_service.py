@@ -6,7 +6,8 @@ from game import constants
 from asciimatics.widgets import Frame
 
 class OutputService:
-    """
+    """Outputs the game state. The responsibility of the class of objects 
+    is to draw the game state on the terminal. 
     
     Stereotype: 
         Service Provider
@@ -19,6 +20,7 @@ class OutputService:
         """The class constructor.
         
         Args:
+            self (OutputService): An instance of OutputService.
             screen (Screen): An Asciimatics Screen.
         """
         self._screen = screen
@@ -34,7 +36,6 @@ class OutputService:
 
         Args:
             actor (Actor): The actor to render.
-
         """ 
         color = actor.get_color()
         if color == 'black':
