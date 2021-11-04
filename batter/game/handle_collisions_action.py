@@ -2,7 +2,7 @@ import random
 from game.constants import MAX_X, MAX_Y
 from game import constants
 from game.action import Action
-from game.point import Point
+from game.actor import Actor
 
 class HandleCollisionsAction(Action):
     """A code template for handling collisions. The responsibility of this class of objects is to update the game state when actors collide.
@@ -20,11 +20,16 @@ class HandleCollisionsAction(Action):
         ball = cast["ball"][0] # there's only one
         paddle = cast["paddle"][0] # there's only one
         bricks = cast["brick"]
-        '''
+        #velocity = ball.get_velocity()
+        #minus_one = -1
+        #velocity_bounce_x = (velocity * -1)
+        fff = (1, -1)
+        
         for brick in bricks:
             if ball.get_position().equals(brick.get_position()):
-                ball.set_velocity(Point.reverse(self))
-
+                brick.set_velocity(fff)
+                #ball.set_velocity(velocity_bounce_x)
+'''
         #If ball bounces off paddle:
         if paddle.get_position().equals(ball.get_position()):
             ball.set_velocity(Point.bounce_X)
