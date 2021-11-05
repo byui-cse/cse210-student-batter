@@ -1,8 +1,10 @@
+import sys
 import random
-from game.constants import MAX_X, MAX_Y
+#from game.constants import MAX_X, MAX_Y
 from game import constants
 from game.action import Action
 from game.actor import Actor
+from game.point import Point
 
 class HandleCollisionsAction(Action):
     """A code template for handling collisions. The responsibility of this class of objects is to update the game state when actors collide.
@@ -20,28 +22,30 @@ class HandleCollisionsAction(Action):
         ball = cast["ball"][0] # there's only one
         paddle = cast["paddle"][0] # there's only one
         bricks = cast["brick"]
-        #velocity = ball.get_velocity()
-        #minus_one = -1
-        #velocity_bounce_x = (velocity * -1)
-        fff = (1, -1)
+        
         
         for brick in bricks:
             if ball.get_position().equals(brick.get_position()):
-                brick.set_velocity(fff)
-                #ball.set_velocity(velocity_bounce_x)
-'''
+                ball.set_velocity(ball._velocity.bounce_Y())
+                bricks.remove(brick)
+        
         #If ball bounces off paddle:
         if paddle.get_position().equals(ball.get_position()):
-            ball.set_velocity(Point.bounce_X)
-        
+            ball.set_velocity(ball._velocity.bounce_Y())
+       
         #If ball bounces off right wall:
-        if ball.get_position() == (MAX_X):
-            ball.set_velocity(Point.bounce_Y)
+        elif ball.get_position().get_x() == (constants.MAX_X - 1):
+            ball.set_velocity(ball._velocity.bounce_X())
 
         #If ball bounces off left wall:
-        if ball.get_position() == (Point.get_x, 4):
-            ball.set_velocity(Point.bounce_Y)
+        elif ball.get_position().get_x() == 1:
+            ball.set_velocity(ball._velocity.bounce_X())
 
-        #If ball bounces off ceiling:
-        if ball.get_position().equals(Point(1, Point.bounce_Y)):
-            ball.set_velocity(Point.bounce_X)'''
+        #If ball bounces off floor:
+        elif ball.get_position().get_y() == constants.MAX_Y - 1:
+            ball.set_velocity(ball._velocity.bounce_Y())
+            #sys.exit()
+
+        #If ball bounces off ceiling
+        elif ball.get_position().get_y() == 1:
+            ball.set_velocity(ball._velocity.bounce_Y())

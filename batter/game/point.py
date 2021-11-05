@@ -76,6 +76,11 @@ class Point:
         x = self._x * -1
         y = self._y * -1
         return Point(x, y)
+
+    def bounce_Y(self):
+        x = self._x 
+        y = self._y * -1
+        return Point(x, y)
     
     def bounce_X(self):
         x = self._x * -1
