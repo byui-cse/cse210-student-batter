@@ -37,7 +37,7 @@ class HandleCollisionsAction(Action):
         # Makes the brick disappear when hit
         for brick in bricks:
             if ball.get_position().equals(brick.get_position()):
-                brick.set_text("")
+                bricks.remove(brick)
                 ball.set_velocity(ball.get_velocity().mirror())
 
         # Game ends if falls outside the paddle. It touches an invisible barrier
