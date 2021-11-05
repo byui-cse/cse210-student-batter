@@ -22,17 +22,27 @@ class HandleCollisionsAction(Action):
         # self.ball__handle_collision(cast)
         # self.ball_ceiling_collision(cast)
         # self.ball_floor_collision(cast)
+        # self.ball_boundarie(cast)
+        # self.paddle_boundaries (cast):
+
 
     def ball_brick_collision(self, cast):
         bricks = cast["brick"] # there's only one
         paddle = cast["paddle"][0] # there's only one
         ball = cast["ball"][0]
+
+        if ball.get_position(Point.get_x()) <=  0 or  ball.get_position(Point.get_x()) >= constants.MAX_X:
+            ball.set_velocity(Point.reverse_x())
+        elif ball.get_position(Point.get_y())  >= 0 +1:
+            ball.set_velocity(Point.reverse_y())
+
         for brick in bricks:
             if ball.get_position().equals(brick.get_position()):
-                brick.set_text("")
+                #brick.set_text("")
                 ball.set_velocity(Point(-1, 1))
+                cast["brick"].remove(brick)
 
-    def paddle_constraints(self, paddle):
+    def paddle_boundaries (self, paddle):
         pass
     # Needs to get the position of the paddle.
     # Compare paddle to 0.
@@ -46,7 +56,7 @@ class HandleCollisionsAction(Action):
         # need to return 
 
 
-    def ball_handle_constraints(self, ball):
+    def ball_boundarie(self, ball):
         pass
         # Needs to find the position of the ball.
         # Then grab the y value of the ball.
