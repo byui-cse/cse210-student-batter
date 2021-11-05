@@ -45,7 +45,7 @@ class paddleCollisionsAction(Action):
     # Needs to get the position of the paddle.
     # Compare paddle to 0.
     # less then zero set paddle start back to zero
-    # If the paddle became more then 69 then reset back to 69
+     # If the paddle became more than max set back to max
 
     def ball_paddle_collision(self,cast):
         pass
