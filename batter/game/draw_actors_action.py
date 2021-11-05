@@ -1,4 +1,6 @@
-""" 
+"""Module draw_actors_action containing class DrawActorsAction
+and its corresponding methods. It translates user input into paddle's
+movement. 
 """
 from game.action import Action
 
@@ -10,7 +12,7 @@ class DrawActorsAction(Action):
         Controller
 
     Attributes:
-        
+        _output_service (OutputService): An instance of OutputService.
     """
 
     def __init__(self, output_service):

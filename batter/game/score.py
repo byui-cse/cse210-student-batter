@@ -28,7 +28,7 @@ class Score(Actor):
         super().__init__()
         self._points = 0
         self._color = 'cyan'
-        self._set_text(f"[Score: {self._points}]")
+        self.set_text(f"[Score: {self._points}]")
     
     def add_points(self, points):
         """Adds the given points to the running total and updates the text.

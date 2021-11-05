@@ -1,4 +1,5 @@
-"""
+"""Module handle_collisions_action containing class HandleCollisionsAction
+and its corresponding methods. It handles actor's collisions.
 """
 import random
 from time import sleep
@@ -11,13 +12,22 @@ from game.score import Score
 from game.lives import Lives
 
 class HandleCollisionsAction(Action):
-    """
+    """A code template for checking collisions. The responsibility of 
+    this class of objects is to check actor's collisions and set their
+    velocity afterwards.
     
     Stereotype:
         Controller
+    
+    Attributes:
+        keep_playing (boolean): Flag that determines whether the game continues or not.
     """
     def __init__(self):
-        """The class constructor."""
+        """The class constructor.
+        
+        Args:
+            self (HandleCollisionsAction): An instance of HandleCollisionsAction.
+        """
         super().__init__()
         self.keep_playing = True
         
@@ -26,7 +36,6 @@ class HandleCollisionsAction(Action):
 
         Args:
             cast (dict): The game actors {key: tag, value: list}.
-            
         """
         ball = cast["ball"][0]      # ball 
         paddle = cast["paddle"][0]  # paddle
@@ -62,15 +71,15 @@ class HandleCollisionsAction(Action):
 
         if check_top == constants.MAX_Y -1:
             x = paddle.get_position().get_x()
-            for value in range(constants.PADDLE_LENGTH):
+            for value in range(constants.PADDLE_LENGTH): 
                 paddle_range.append(x + value)
             ball_x = ball.get_position().get_x()
            
-            if ball_x in paddle_range:
+            if ball_x in paddle_range:   #if paddle hits the ball
                 new_y = ball.get_velocity().reverse_y()
                 ball.set_velocity(new_y)
 
-            elif lives.get_lives():
+            elif lives.get_lives():  #if paddle misses the ball
                 lives.subtract_life()
 
                 x_ball = int(constants.MAX_X / 2)
@@ -88,7 +97,13 @@ class HandleCollisionsAction(Action):
                 self.keep_playing = False
 
     def checkPlay(self):
-        """
+        """Checks the condition of the game.
+
+        Args:
+            self (Actor): An instance of Actor.
+
+        Returns:
+            keep_playing (boolean): The flag determining whether the game continues or not.
         """
         if not self.bricks:
             self.keep_playing = False

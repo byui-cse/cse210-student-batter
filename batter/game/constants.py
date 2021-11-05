@@ -1,4 +1,4 @@
-""" 
+"""Module constants containing all the main parameters for the game.
 """
 import os
 

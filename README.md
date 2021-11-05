@@ -27,6 +27,19 @@ The project files and folders are organized as follows:
 root                    (project root folder)
 +-- batter              (source code for game)
   +-- game              (specific game classes)
+    +-- action.py
+    +-- actor.py
+    +-- constants.py
+    +-- control_paddle_action.py
+    +-- director.py
+    +-- draw_actors_action.py
+    +-- handle_collisions_action.py
+    +-- input_service.py
+    +-- lives.py
+    +-- move_actors_action.py
+    +-- output_service.py
+    +-- point.py
+    +-- score.py
   +-- __init__.py       (python package file)
   +-- __main__.py       (entry point for program)
 +-- README.md           (general info)

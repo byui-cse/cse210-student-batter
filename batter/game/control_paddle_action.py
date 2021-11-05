@@ -1,4 +1,6 @@
-""" 
+"""Module control_paddle_action containing class ControlPaddleAction
+and its corresponding methods. It translates user input into paddle's
+movement.
 """
 from game import constants
 from game.action import Action
