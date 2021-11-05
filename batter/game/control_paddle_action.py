@@ -34,7 +34,14 @@ class ControlPaddleAction(Action):
         direction = self._input_service.get_direction()
         x = direction.get_x() * constants.PADDLE_SPEED_FACTOR
         y = direction.get_y()
-              
+
+        # if x <= 1:
+        #     x = 1
+        # elif x + constants.PADDLE_LENGTH > constants.MAX_X - 1:
+        #     x = constants.MAX_X - constants.PADDLE_LENGTH - 1
+        #else:
+            #x *= constants.PADDLE_SPEED_FACTOR
+                          
         direction = Point(x, y)
         paddle = cast["paddle"][0]
         paddle.set_velocity(direction)
