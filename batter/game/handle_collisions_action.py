@@ -27,21 +27,19 @@ class HandleCollisionsAction(Action):
 
 
     def ball_brick_collision(self, cast):
-        bricks = cast["brick"] # there's only one
         paddle = cast["paddle"][0] # there's only one
-        ball = cast["ball"][0]
-
-        if ball.get_position(Point.get_x()) <=  0 or  ball.get_position(Point.get_x()) >= constants.MAX_X:
-            ball.set_velocity(Point.reverse_x())
-        elif ball.get_position(Point.get_y())  >= 0 +1:
-            ball.set_velocity(Point.reverse_y())
-
+        bricks = cast["brick"] # there's only one
+        ball = cast["ball"][0]# bball brick collision get ball position equal brick get position
+        # cast brick remove brick
+        # set velocity to ball get velocity()
+        # set x veolocity to get x()
+        # set y to velocity get y()
+        # set x to random. choice (constants. Direction)  
+        # set y to *or equal -1   
         for brick in bricks:
             if ball.get_position().equals(brick.get_position()):
-                #brick.set_text("")
-                ball.set_velocity(Point(-1, 1))
-                cast["brick"].remove(brick)
-
+                cast["brick"].remove(brick) # this removes the brick 
+                #ball.reverse() #ball.set_velocity(ball.get_veloctiy.reveser())  
     def paddle_boundaries (self, paddle):
         pass
     # Needs to get the position of the paddle.
