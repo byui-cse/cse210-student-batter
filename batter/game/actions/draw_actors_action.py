@@ -1,5 +1,5 @@
 # Chase
-from game.action import Action
+from game.actions import Action
 
 class DrawActorsAction(Action):
     """A code template for drawing actors. The responsibility of this class of
