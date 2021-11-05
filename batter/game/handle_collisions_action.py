@@ -40,21 +40,21 @@ class paddleCollisionsAction(Action):
             if ball.get_position().equals(brick.get_position()):
                 cast["brick"].remove(brick) # this removes the brick 
                 #ball.reverse() #ball.set_velocity(ball.get_veloctiy.reveser())  
-    def paddle_boundaries (self, paddle):
+    def paddle_boundaries (self, cast):
         pass
     # Needs to get the position of the paddle.
     # Compare paddle to 0.
     # less then zero set paddle start back to zero
     # If the paddle became more then 69 then reset back to 69
 
-    def ball_paddle_collision(self, paddle, ball):
+    def ball_paddle_collision(self,cast):
         pass
         # Needs to loop through the length of the paddle and compare its position with the position of the ball.
         # If the ball postition is equal to any portion of the paddle, bounce.
         # need to return 
 
 
-    def ball_boundarie(self, ball):
+    def ball_boundarie(self, cast):
         pass
         # Needs to find the position of the ball.
         # Then grab the y value of the ball.
@@ -78,6 +78,6 @@ class paddleCollisionsAction(Action):
         # Exit the system
         pass
     
-    def ball_ceiling_collision(self, ball):
+    def ball_ceiling_collision(self, cast):
         pass
 
