@@ -51,3 +51,4 @@ root                                  (project root folder)
 ## Authors
 ---
 * Bryndi Hellewell - brynlol12@gmail.com
+* Chase Odermott - ode16003@byui.edu
