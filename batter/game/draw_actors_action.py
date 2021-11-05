@@ -15,6 +15,7 @@ class DrawActorsAction(Action):
         
         Args:
             self (DrawActorsAction): An instance of DrawActorsAction
+            
             output_service (OutputService): An instance of OutputService
     """
         self._output_service = output_service
@@ -26,7 +27,11 @@ class DrawActorsAction(Action):
         Args:
             cast (dict): The game actors {key: tag, value: list}.
         """ 
-               
+        self._output_services.clear_screen()
+        for group in cast.values():
+            self._output_service.draw_actors(group)
+        self._output_service.flush_buffer()
+
         
 """Example from RFK:
         marquee = cast["marquee"][0] # there's only one
