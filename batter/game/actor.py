@@ -13,7 +13,6 @@ class Actor:
         Information Holder
 
     Attributes:
-        #_description (string):
         _color (string): The actor's color.
         _text (string): The textual representation of the actor.
         _position (Point): The actor's position in 2d space.
@@ -28,22 +27,9 @@ class Actor:
 
         """
         self._color = 'white'
-        #self._description = ""
         self._text = ""
         self._position = Point(0, 0)
         self._velocity = Point(0, 0)
-
-#     def get_description(self):
-#         """Gets the artifact's description.
-
-#          Args:
-#           self (Actor): an instance of Actor.
-
-        
-#         Returns:
-#             string: The artifact's description.
-#         """
-#         return self._description 
 
     def get_position(self):
         """Gets the actor's position in 2d space.
@@ -98,15 +84,6 @@ class Actor:
         """
         self._color = color
         
-#     def set_description(self, description):
-#         """Updates the actor's description to the given one.
-        
-#         Args:
-#             self (Actor): an instance of Actor.
-#             description (string): The given description.
-#         """
-#         self._description = description
-
     def set_position(self, position):
         """Updates the actor's position to the given one.
         

@@ -1,4 +1,5 @@
-""" 
+"""Module move_actors_action containing class MoveActorsAction
+and its corresponding methods. It moves actors to their new position.
 """
 from game import constants
 from game.action import Action
@@ -27,7 +28,9 @@ class MoveActorsAction(Action):
 
 
     def _move_actor(self, actor):
-        """
+        """Moves the given actor to its next position according to its 
+        velocity. Will wrap the position from one side of the screen to the 
+        other when it reaches the edge in either direction.
         
         Args:
             actor (Actor): The actor to move.

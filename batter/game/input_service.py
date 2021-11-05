@@ -1,4 +1,5 @@
-""" 
+"""Module input_service containing class InputService
+and its corresponding methods. It detects user's input.
 """
 import sys
 from game.point import Point
@@ -17,7 +18,12 @@ class InputService:
     """
 
     def __init__(self, screen):
-        """The class constructor."""
+        """The class constructor.
+        
+        Args:
+            self (InputService): An instance of InputService.
+            screen (Screen): An instance of Screen.
+        """
         self._screen = screen
         self._keys = {}
         
@@ -25,8 +31,11 @@ class InputService:
         self._keys[100] = Point(1, 0) # d
         
     def get_direction(self):
-        """Gets the selected direction for the given player.
-
+        """Gets the selected direction based on the currently pressed keys.
+        
+        Args:
+            self (InputService): An instance of InputService.
+        
         Returns:
             Point: The selected direction.
         """
