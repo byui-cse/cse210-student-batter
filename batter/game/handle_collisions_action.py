@@ -3,7 +3,7 @@ from game import constants
 from game.action import Action
 from game.point import Point
 
-class HandleCollisionsAction(Action):
+class paddleCollisionsAction(Action):
     """A code template for handling collisions. The responsibility 
     of this class of objects is to update the game state when actors collide.
     
@@ -18,12 +18,12 @@ class HandleCollisionsAction(Action):
             cast (dict): The game actors {key: tag, value: list}.
         """
         self.ball_brick_collision(cast)
-        # self.ball.paddle_constraints(cast)
-        # self.ball__handle_collision(cast)
-        # self.ball_ceiling_collision(cast)
-        # self.ball_floor_collision(cast)
-        # self.ball_boundarie(cast)
-        # self.paddle_boundaries (cast):
+        self.ball__paddle_collision(cast)
+        self.ball_ceiling_collision(cast)
+        self.ball_floor_collision(cast)
+        self.ball_boundarie(cast)
+        self.paddle_boundaries (cast)
+        self.ball_paddle_boundaries(cast)
 
 
     def ball_brick_collision(self, cast):
