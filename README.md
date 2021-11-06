@@ -41,3 +41,6 @@ root                    (project root folder)
 ---
 * # TODO: Add your names and emails here
 Jennifer Clark  email Jennifer.c.schultz@gmail.com
+Kevin Espinoza robert.kevin.espinoza@gmail.com
+Benjamin Welsch email bwelsch@byui.edu
+
