@@ -61,3 +61,15 @@ class HandleCollisionsAction(Action):
         #If ball bounces off ceiling
         elif ball.get_position().get_y() == 1:
             ball.set_velocity(ball._velocity.bounce_Y())
+        
+        paddlex = paddle.get_position().get_x()
+        if paddlex == (70):
+            x = int(paddle.get_position().get_x() - 2)
+            y = int(constants.MAX_Y - 1)
+            position = Point(x, y)
+            paddle.set_position(position)
+        elif paddlex == (2):
+            x = int(paddle.get_position().get_x() + 2)
+            y = int(constants.MAX_Y - 1)
+            position = Point(x, y)
+            paddle.set_position(position)
