@@ -23,7 +23,7 @@ class HandleCollisionsAction(Action):
         self.ball_floor_collision(cast)
         self.ball_boundarie(cast)
         self.paddle_boundaries (cast)
-        self.ball_paddle_boundaries(cast)
+        #self.ball_paddle_boundaries(cast)
 
 
     def ball_brick_collision(self, cast):
@@ -45,7 +45,7 @@ class HandleCollisionsAction(Action):
     # Needs to get the position of the paddle.
     # Compare paddle to 0.
     # less then zero set paddle start back to zero
-     # If the paddle became more than max set back to max
+    # If the paddle became more than max set back to max
 
     def ball_paddle_collision(self,cast):
  
