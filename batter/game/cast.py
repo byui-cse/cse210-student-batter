@@ -13,13 +13,20 @@ class Cast:
         self.setup_ball()
 
     def setup_paddle(self):
-        x = int(constants.MAX_X / 2)
+        self._paddle_parts = []
+        start_x = int(constants.MAX_X / 2)
         y = int(constants.MAX_Y - 1)
-        position = Point(x, y)
-        paddle = Actor()
-        paddle.set_text("===========")
-        paddle.set_position(position)
-        self._paddle = paddle
+        for x in range(start_x, start_x + 11):
+            position = Point(x, y)
+            paddle = Actor()
+            if x == start_x:
+                paddle.set_text('╾')
+            elif x == start_x + 10:
+                paddle.set_text('╼')
+            else:
+                paddle.set_text('─')
+            paddle.set_position(position)
+            self._paddle_parts.append(paddle)
     
     def setup_bricks(self):
         self._bricks = []
@@ -43,8 +50,8 @@ class Cast:
         self._ball = ball
 
     @property
-    def paddle(self):
-        return self._paddle
+    def paddle_parts(self):
+        return self._paddle_parts
     
     @property
     def bricks(self):
@@ -56,5 +63,9 @@ class Cast:
     
     @property
     def cast_list(self):
-        formatted_cast = [[self._paddle], [self._ball], self._bricks]
+        formatted_cast = [self._paddle_parts, [self._ball], self._bricks]
         return formatted_cast
+    
+    @property
+    def npc_list(self):
+        return [[self._ball], self._bricks]

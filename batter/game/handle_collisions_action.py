@@ -17,7 +17,7 @@ class HandleCollisionsAction(Action):
         Args:
             cast (Cast object): The current game actors.
         """
-        self._paddle = cast.paddle
+        self._paddle = cast.paddle_parts
         self._ball = cast.ball
         self._bricks = cast.bricks
         self._check_brick_collision()

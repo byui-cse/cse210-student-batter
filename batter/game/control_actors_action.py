@@ -27,5 +27,12 @@ class ControlActorsAction(Action):
             cast (Cast object): The current game actors.
         """
         direction = self._input_service.get_direction()
-        paddle = cast.paddle # there's only one in the cast
-        paddle.set_velocity(direction)        
+        paddle_parts = cast.paddle_parts
+        paddle_far_left = paddle_parts[0].get_position().get_x() == 1
+        paddle_far_right = paddle_parts[-1].get_position().get_x() == constants.MAX_X - 1
+        if paddle_far_left and direction.get_x() == -1:
+            return
+        if paddle_far_right and direction.get_x() == 1:
+            return
+        for sect in paddle_parts:
+            sect.set_velocity(direction)

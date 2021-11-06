@@ -19,7 +19,7 @@ class MoveActorsAction(Action):
         Args:
             cast (Cast object): The current game actors.
         """
-        for group in cast.cast_list:
+        for group in cast.npc_list:
             for actor in group:
                 if not actor.get_velocity().is_zero():
                     self._move_actor(actor)
