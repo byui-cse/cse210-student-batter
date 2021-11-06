@@ -22,7 +22,8 @@ click the "run" icon.
 
 If your input appears to be delayed, try changing your operating system's keyboard settings to reduce the delay for repeating keys:
 ![Example in KDE](readme_content/input_delay_in_os.png)
-Make sure to reset your configuration when done playing.
+
+**Make sure to reset your configuration when done playing.**
 
 ## Project Structure
 ---
