@@ -19,13 +19,11 @@ class HandleCollisionsAction(Action):
             cast (dict): The game actors {key: tag, value: list}.
         """
         self.ball_brick_collision(cast)
-
-        #self.ball_paddle_collision(cast)
+        self.ball_paddle_collision(cast)
         self.ball_ceiling_collision(cast)
         self.ball_floor_collision(cast)
         self.ball_wall_collision(cast)
-        # self.paddle_boundaries (cast)
-        # self.ball_paddle_boundaries(cast)
+        #self.paddle_boundaries (cast)
 
 
     def ball_brick_collision(self, cast):
@@ -91,10 +89,10 @@ class HandleCollisionsAction(Action):
         ball = cast["ball"][0]
         position = ball.get_position()
         ball_y = position.get_y()
-        if ball_y >= constants.MAX_Y +2:
-            sys.exit()
-            # velocity = ball.get_velocity()
-            # ball.set_velocity(velocity.reverse_y())
+        if ball_y >= constants.MAX_Y -1: # - 1 to test but +2 to run game
+            #sys.exit()
+            velocity = ball.get_velocity()
+            ball.set_velocity(velocity.reverse_y())
         # balPos = cast["ball"].get_position()
         # if balPos.get_x() == constants.MAX_X or balPos.get_x() == 0 or balPos.get_y() == constants.MAX_Y:
         #     pass
@@ -116,5 +114,8 @@ class HandleCollisionsAction(Action):
         if ball_y == 0:
             velocity = ball.get_velocity()
             ball.set_velocity(velocity.reverse_y())
+
+    def paddle_boundaries (self,cast):
+        pass
 
 
