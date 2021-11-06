@@ -4,7 +4,7 @@ from game import constants
 from game.action import Action
 from game.point import Point
 
-class HaddleCollisionsAction(Action):
+class HandleCollisionsAction(Action):
     """A code template for handling collisions. The responsibility 
     of this class of objects is to update the game state when actors collide.
     
