@@ -21,6 +21,7 @@ class HandleCollisionsAction(Action):
         self._ball = cast.ball
         self._bricks = cast.bricks
         self._check_brick_collision()
+        self._check_paddle_collision()
         
     def _check_brick_collision(self):
         projected_pos = self._calc_ball_direction()
@@ -28,8 +29,17 @@ class HandleCollisionsAction(Action):
             if brick.get_position().equals(projected_pos):
                 self._bricks.remove(brick)
                 start_vel = self._ball.get_velocity()
-                end_vel = start_vel.reverse()
+                end_vel = start_vel.reverse_y()
                 self._ball.set_velocity(end_vel)
+
+    def _check_paddle_collision(self):
+        projected_pos = self._calc_ball_direction()
+        for paddle_part in self._paddle:
+            if paddle_part.get_position().equals(projected_pos):
+                start_vel = self._ball.get_velocity()
+                end_vel = start_vel.reverse_y()
+                self._ball.set_velocity(end_vel)
+
 
 
     def _calc_ball_direction(self):
