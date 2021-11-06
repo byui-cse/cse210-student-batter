@@ -1,3 +1,4 @@
+import sys
 from game import constants
 from game.point import Point
 from game.action import Action
@@ -22,11 +23,11 @@ class HandleCollisionsAction(Action):
         self._top = cast.top_parts
         self._side = cast.side_parts
         self._bottom = cast.bottom_parts
-        self._check_brick_collision()
         self._check_paddle_collision()
         self._check_top_collision()
         self._check_side_collision()
-        self._check_bottom_collision()
+        self._check_brick_collision()
+        # self._check_bottom_collision()
         
     def _check_brick_collision(self):
         projected_pos = self._calc_ball_direction()
@@ -65,8 +66,9 @@ class HandleCollisionsAction(Action):
         projected_pos = self._calc_ball_direction()
         for bottom_part in self._bottom:
             if bottom_part.get_postition().equals(projected_pos):
-                return True
-
+                pass
+            else:
+                pass
 
     def _calc_ball_direction(self):
         ball_pos = self._ball.get_position()

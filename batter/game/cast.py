@@ -81,9 +81,6 @@ class Cast:
                 side_part.set_position(position)
                 self._side_parts.append(side_part)
 
-    # def setup_left(self):
-    #     self._left_parts = []
-
     def setup_bottom(self):
         self._bottom_parts = []
         y = constants.MAX_Y
