@@ -14,7 +14,6 @@ class HandleCollisionsAction(Action):
 
     def execute(self, cast):
         """Executes the action using the given actors.
-
         Args:
             cast (dict): The game actors {key: tag, value: list}.
         """
@@ -49,11 +48,7 @@ class HandleCollisionsAction(Action):
      # If the paddle became more than max set back to max
 
     def ball_paddle_collision(self,cast):
-        paddle = cast["paddle"][0] # there's only one
-        ball = cast["ball"][0]
-        for paddles in paddle:
-            if ball.get_position().equals(paddle.get_position()):
-                sys.exit()
+ 
         pass
         # Needs to loop through the length of the paddle and compare its position with the position of the ball.
         # If the ball postition is equal to any portion of the paddle, bounce.
@@ -86,4 +81,3 @@ class HandleCollisionsAction(Action):
     
     def ball_ceiling_collision(self, cast):
         pass
-
