@@ -17,10 +17,10 @@ def main(screen):
     cast = {}
 
     x = int(constants.MAX_X / 2)
-    y = int(constants.MAX_Y - 1)
+    y = int(constants.MAX_Y - 2)
     position = Point(x, y)
     paddle = Actor()
-    paddle.set_text("===========")
+    paddle.set_text("═══════════")
     paddle.set_position(position)
     cast["paddle"] = [paddle]
 
@@ -29,19 +29,54 @@ def main(screen):
         for y in range(2, 6):
             position = Point(x, y)
             brick = Actor()
-            brick.set_text("*")
+            brick.set_text("■ ")
             brick.set_position(position)
             cast["brick"].append(brick)
 
     x = int(constants.MAX_X / 2)
     y = int(constants.MAX_Y / 2)
-    position = Point(x, y)
-    velocity = Point(1, -1)
+    position = Point(x, y) #Start at the half part of the ball
+    velocity = Point(1, -1) 
     ball = Actor()
-    ball.set_text("@")
+    ball.set_text("◉")
     ball.set_position(position)
     ball.set_velocity(velocity)
     cast["ball"] = [ball]
+
+    cast["bottom_barrier"] = []
+    x = int(0)
+    y = int(constants.MAX_Y - 1)
+    for x in range(0, constants.MAX_X):
+        position = Point(x, y)
+        barrier = Actor()
+        barrier.set_text("")
+        barrier.set_position(position)
+        cast["bottom_barrier"].append(barrier)
+
+    cast["top_barrier"] = []
+    x = int(0)
+    y = int(1)
+    for x in range(0, constants.MAX_X):
+        position = Point(x, y)
+        barrier = Actor()
+        barrier.set_text("")
+        barrier.set_position(position)
+        cast["top_barrier"].append(barrier)
+
+    cast["side_barrier"] = []
+    for y in range(0, constants.MAX_Y):
+        position = Point(1, y)
+        barrier = Actor()
+        barrier.set_text("")
+        barrier.set_position(position)
+        cast["side_barrier"].append(barrier)
+    for y in range(0, constants.MAX_Y):
+        position = Point(constants.MAX_X -1, y)
+        barrier = Actor()
+        barrier.set_text("")
+        barrier.set_position(position)
+        cast["side_barrier"].append(barrier)
+    
     
     # create the script {key: tag, value: list}
     script = {}

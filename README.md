@@ -39,4 +39,7 @@ root                    (project root folder)
 
 ## Authors
 ---
-* # TODO: Add your names and emails here
+* Nacho Ampuero
+* Rafael Alcantara da Silva
+* David Esguerra: davidesguerra@email.com
+* Shared Ordaz: sharedordaz@live.com.mx
