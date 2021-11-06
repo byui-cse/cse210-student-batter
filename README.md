@@ -41,3 +41,5 @@ root                    (project root folder)
 ---
 * Nacho Ampuero
 * Rafael Alcantara da Silva
+* David Esguerra: davidesguerra@email.com
+* Shared Ordaz: sharedordaz@live.com.mx
