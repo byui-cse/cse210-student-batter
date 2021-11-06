@@ -1,6 +1,7 @@
 from game import constants
 from game.action import Action
 from game.actor import Actor
+from game.point import Point
 
 class ControlActorsAction(Action):
     """A code template for controlling actors. The responsibility of this
@@ -33,9 +34,9 @@ class ControlActorsAction(Action):
             paddle_far_left = paddle_parts[0].get_position().get_x() == 1
             paddle_far_right = paddle_parts[-1].get_position().get_x() == constants.MAX_X - 1
             if paddle_far_left and direction.get_x() == -1:
-                return
+                direction = Point(0, 0)
             if paddle_far_right and direction.get_x() == 1:
-                return
+                direction = Point(0, 0)
             for sect in paddle_parts:
                 if type(sect) is Actor:
                     sect.set_velocity(direction)

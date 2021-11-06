@@ -20,6 +20,9 @@ You can also run the program from an IDE like Visual Studio Code. Start your IDE
 and open the project folder. Select the main module inside the hunter folder and 
 click the "run" icon.
 
+If your input appears to be delayed, try changing your operating system's keyboard settings to reduce the delay for repeating keys:
+![Example in KDE](readme_content/input_delay_in_os.png)
+
 ## Project Structure
 ---
 The project files and folders are organized as follows:
@@ -52,3 +55,4 @@ root                                  (project root folder)
 ---
 * Bryndi Hellewell - brynlol12@gmail.com
 * Chase Odermott - ode16003@byui.edu
+* Carson Bush - hyperdriveguy@byui.edu
