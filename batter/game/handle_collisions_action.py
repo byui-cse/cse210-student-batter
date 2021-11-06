@@ -55,8 +55,8 @@ class HandleCollisionsAction(Action):
 
         #If ball bounces off floor:
         elif ball.get_position().get_y() == constants.MAX_Y - 1:
-            ball.set_velocity(ball._velocity.bounce_Y())
-            #sys.exit()
+            #ball.set_velocity(ball._velocity.bounce_Y())
+            sys.exit()
 
         #If ball bounces off ceiling
         elif ball.get_position().get_y() == 1:
