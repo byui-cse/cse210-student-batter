@@ -27,7 +27,7 @@ class DrawActorsAction(Action):
         Args:
             cast (Cast object): The current game actors.
         """ 
-        self._output_services.clear_screen()
+        self._output_service.clear_screen()
         for group in cast.cast_list:
             self._output_service.draw_actors(group)
         self._output_service.flush_buffer()
