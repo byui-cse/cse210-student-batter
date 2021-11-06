@@ -1,5 +1,6 @@
 from time import sleep
 from game import constants
+import threading
 
 class Director:
     """A code template for a person who directs the game. The responsibility of 
@@ -17,18 +18,48 @@ class Director:
         """The class constructor.
         
         Args:
-            cast (dict): The game actors {key: tag, value: list}.
+            cast (Cast object): The current game actors.
             script (dict): The game actions {key: tag, value: list}.
         """
         self._cast = cast
         self._script = script
+        self._update_active = True
         
     def start_game(self):
         """Starts the game loop to control the sequence of play."""
-        while True:
-            self._cue_action("input")
-            self._cue_action("update")
-            self._cue_action("output")
+        # Initial draw before starting updates
+        self._cue_action('output')
+
+        # Create the update thread
+        update_t = threading.Timer(0.05, self._do_update)
+
+        # Start the update thread
+        update_t.start()
+
+        # Do IO updates on the main thread
+        exit = False
+        while not exit:
+            exit = self._cue_returnable_action('input')
+            if type(exit) is not bool:
+                exit = False
+            if exit:
+                break
+            self._cue_action('player')
+            self._cue_action('output')
+            # Maximum delay before the paddle wall collision doesn't work
+            # This is done to balance CPU time with reduced input lag
+            sleep(0.016)
+        
+        # Stop the update thread if it's alive on game exit
+        if update_t.is_alive():
+            self._update_active = False
+            update_t.join()
+
+    def _do_update(self):
+        """Preforms game updates for NPCs at a set delay.
+        """
+        while self._update_active:
+            self._cue_action('update')
             sleep(constants.FRAME_LENGTH)
 
     def _cue_action(self, tag):
@@ -39,3 +70,11 @@ class Director:
         """ 
         for action in self._script[tag]:
             action.execute(self._cast)
+
+    def _cue_returnable_action(self, tag):
+        """Executes the actions with the given tag.
+        
+        Args:
+            tag (string): The given tag.
+        """ 
+        return self._script[tag][0].execute(self._cast)
