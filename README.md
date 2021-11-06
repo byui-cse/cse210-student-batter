@@ -40,3 +40,7 @@ root                    (project root folder)
 ## Authors
 ---
 * # TODO: Add your names and emails here
+anita Woodford          awoodfor@byui
+Lazaro Felizardo Matola lazarofmatola@gmail.com
+Xander Newlun           xdnewlun1@byui.edu
+Zach Robker             zrobker@byui.edu
