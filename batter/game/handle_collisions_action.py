@@ -32,7 +32,7 @@ class HandleCollisionsAction(Action):
         # TypeError: 'method' object is not subscriptable
         # ball_name = random.choice["@", "&", "§", "#", "%"]
 
-        ball.set_text("@")
+        ball.set_text("◉")
 
         # Makes the brick disappear when hit
         for brick in bricks:
