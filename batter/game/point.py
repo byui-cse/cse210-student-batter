@@ -60,13 +60,13 @@ class Point:
         """
         return self._y
 
-    def is_zero(self):
-        """Whether or not the point is zero or x = 0 and y = 0.
+    # def is_zero(self):
+    #     """Whether or not the point is zero or x = 0 and y = 0.
         
-        Returns:
-            boolean: True if x = 0 and y = 0; false if otherwise.
-        """
-        return self._x == 0 and self._y == 0
+    #     Returns:
+    #         boolean: True if x = 0 and y = 0; false if otherwise.
+    #     """
+    #     return self._x == 0 and self._y == 0
         
     def reverse(self):
         """Gets a new Point that is the reverse of this one.
