@@ -81,6 +81,7 @@ class Point:
     def reverse_y(self):
         """Gets the reverse vertical distance.
         Returns:
+        
             integer: The vertical distance.
         """
 
@@ -91,6 +92,7 @@ class Point:
     def reverse_x(self):
         """Gets the reverse horizontal distance.
         Returns:
+
             integer: The horizontal distance.
         """
 
