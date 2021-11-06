@@ -1,9 +1,10 @@
 import random
+import sys
 from game import constants
 from game.action import Action
 from game.point import Point
 
-class paddleCollisionsAction(Action):
+class HaddleCollisionsAction(Action):
     """A code template for handling collisions. The responsibility 
     of this class of objects is to update the game state when actors collide.
     
@@ -18,7 +19,7 @@ class paddleCollisionsAction(Action):
             cast (dict): The game actors {key: tag, value: list}.
         """
         self.ball_brick_collision(cast)
-        self.ball__paddle_collision(cast)
+        self.ball_paddle_collision(cast)
         self.ball_ceiling_collision(cast)
         self.ball_floor_collision(cast)
         self.ball_boundarie(cast)
@@ -27,7 +28,7 @@ class paddleCollisionsAction(Action):
 
 
     def ball_brick_collision(self, cast):
-        paddle = cast["paddle"][0] # there's only one
+        
         bricks = cast["brick"] # there's only one
         ball = cast["ball"][0]# bball brick collision get ball position equal brick get position
         # cast brick remove brick
@@ -48,6 +49,11 @@ class paddleCollisionsAction(Action):
      # If the paddle became more than max set back to max
 
     def ball_paddle_collision(self,cast):
+        paddle = cast["paddle"][0] # there's only one
+        ball = cast["ball"][0]
+        for paddles in paddle:
+            if ball.get_position().equals(paddle.get_position()):
+                sys.exit()
         pass
         # Needs to loop through the length of the paddle and compare its position with the position of the ball.
         # If the ball postition is equal to any portion of the paddle, bounce.
