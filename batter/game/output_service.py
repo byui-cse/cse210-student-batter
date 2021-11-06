@@ -1,12 +1,18 @@
+<<<<<<< HEAD
 """ imports constants from game. Imports frame from asciimatics.widgets.
 A class of OutputService.
+=======
+"""Module output_service containing class OutputService and its corresponding
+methods. It draws the actors on the terminal.
+>>>>>>> a40ca14d4374034347e44bf841315a49a3284175
 """
 import sys
 from game import constants
 from asciimatics.widgets import Frame
 
 class OutputService:
-    """
+    """Outputs the game state. The responsibility of the class of objects 
+    is to draw the game state on the terminal.
     
     Stereotype: 
         Service Provider
@@ -19,22 +25,28 @@ class OutputService:
         """The class constructor.
         
         Args:
+            self (OutputService): An instance of OutputService.
             screen (Screen): An Asciimatics Screen.
         """
         self._screen = screen
         
     def clear_screen(self):
-        """Clears the Asciimatics buffer for the next rendering.""" 
+        """Clears the Asciimatics buffer in preparation for the next rendering.
+        
+        Args:
+            self (OutputService): An instance of OutputService.
+        """
         self._screen.clear_buffer(7, 0, 0)
         self._screen.print_at("-" * constants.MAX_X, 0, 0, 7)
         self._screen.print_at("-" * constants.MAX_X, 0, constants.MAX_Y, 7)
 
     def draw_actor(self, actor):
-        """Renders the given actor's text on the screen.
-
+        """Renders the given actor's text on the screen, including
+        its color.
+        
         Args:
+            self (OutputService): An instance of OutputService.
             actor (Actor): The actor to render.
-
         """ 
         color = actor.get_color()
         if color == 'black':
@@ -62,9 +74,10 @@ class OutputService:
 
 
     def draw_actors(self, actors):
-        """Renders the given list of actors on the screen.
-
+        """enders the given list of actors on the screen.
+        
         Args:
+            self (OutputService): An instance of OutputService.
             actors (list): The actors to render.
         """ 
         for actor in actors:
@@ -72,5 +85,9 @@ class OutputService:
     
 
     def flush_buffer(self):
-        """Renders the screen.""" 
+        """Renders the screen.
+        
+        Args:
+            self (OutputService): An instance of OutputService.
+        """
         self._screen.refresh()

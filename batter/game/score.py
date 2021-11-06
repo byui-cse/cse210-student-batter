@@ -1,4 +1,5 @@
-""" 
+""" Module score containing class Score and its corresponding
+methods.It is used to track the points earned by player.
 """
 import random
 from game import constants
@@ -6,13 +7,16 @@ from game.actor import Actor
 from game.point import Point
 
 class Score(Actor):
-    """
+    """Points earned. The responsibility of Score is 
+    to keep track of the actor's earned points.
 
     Stereotype:
         Information Holder
 
     Attributes: 
         _points (integer): The number of points the food is worth.
+        _color (string): The actor's color.
+        _set_text (string): The given points or score
     """
     def __init__(self):
         """The class constructor. Invokes the superclass constructor, 
@@ -24,8 +28,6 @@ class Score(Actor):
         super().__init__()
         self._points = 0
         self._color = 'cyan'
-        #position = Point(2, constants.MAX_Y)
-        #self.set_position(position)
         self.set_text(f"[Score: {self._points}]")
     
     def add_points(self, points):

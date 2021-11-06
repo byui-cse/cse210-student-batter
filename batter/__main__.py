@@ -1,3 +1,5 @@
+"""Module main containing method main that handles all
+the datatype objects for the game."""
 import random
 from game import handle_collisions_action
 from game import constants
@@ -16,7 +18,13 @@ from game.lives import Lives
 
 
 def main(screen):
+    """Code for the entry point of the program.
 
+    Stereotype:
+        Structurer
+    Args:
+        screen (Screen): An instance of Screen.
+    """
     # create the cast {key: tag, value: list}
     cast = {}
 

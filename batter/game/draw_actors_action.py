@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 """ Imports Action from game.action
 A class of DrawActorsAction.
+=======
+"""Module draw_actors_action containing class DrawActorsAction
+and its corresponding methods. It translates user input into paddle's
+movement. 
+>>>>>>> a40ca14d4374034347e44bf841315a49a3284175
 """
 from game.action import Action
 
@@ -11,7 +17,7 @@ class DrawActorsAction(Action):
         Controller
 
     Attributes:
-        
+        _output_service (OutputService): An instance of OutputService.
     """
 
     def __init__(self, output_service):
