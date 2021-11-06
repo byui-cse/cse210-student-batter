@@ -13,7 +13,7 @@ class HandleCollisionsAction(Action):
         """Executes the action using the given actors.
 
         Args:
-            cast (dict): The game actors {key: tag, value: list}.
+            cast (Cast object): The current game actors.
         """
 
 
