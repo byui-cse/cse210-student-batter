@@ -30,7 +30,19 @@ class HandleCollisionsAction(Action):
                 bricks.remove(brick)
         
         #If ball bounces off paddle:
-        if paddle.get_position().equals(ball.get_position()):
+        if (paddle.get_position().equals(ball.get_position())
+            or ball.get_position().equals(paddle.get_position().add(Point(1,0)))
+            or ball.get_position().equals(paddle.get_position().add(Point(2,0)))
+            or ball.get_position().equals(paddle.get_position().add(Point(3,0)))
+            or ball.get_position().equals(paddle.get_position().add(Point(4,0)))
+            or ball.get_position().equals(paddle.get_position().add(Point(5,0)))
+            or ball.get_position().equals(paddle.get_position().add(Point(6,0)))
+            or ball.get_position().equals(paddle.get_position().add(Point(7,0)))
+            or ball.get_position().equals(paddle.get_position().add(Point(8,0)))
+            or ball.get_position().equals(paddle.get_position().add(Point(9,0)))
+            or ball.get_position().equals(paddle.get_position().add(Point(10,0)))
+            ):
+            
             ball.set_velocity(ball._velocity.bounce_Y())
        
         #If ball bounces off right wall:
