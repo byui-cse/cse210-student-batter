@@ -23,7 +23,7 @@ class HandleCollisionsAction(Action):
         self.ball_ceiling_collision(cast)
         self.ball_floor_collision(cast)
         self.ball_wall_collision(cast)
-        #self.paddle_boundaries (cast)
+        self.paddle_boundaries(cast)
 
 
     def ball_brick_collision(self, cast):
@@ -56,7 +56,7 @@ class HandleCollisionsAction(Action):
         ball_x_position = ball.get_position().get_x()
         ball_y_position = ball.get_position().get_y()
         
-        if (ball_y_position == paddle_y_position and ball_x_position >= paddle_x_position and ball_x_position <= paddle_x_position + len(paddle.get_text())):
+        if (ball_y_position == paddle_y_position - 1 and ball_x_position >= paddle_x_position and ball_x_position <= paddle_x_position + len(paddle.get_text())):
             velocity = ball.get_velocity()
             ball.set_velocity(velocity.reverse_y())
         
@@ -89,7 +89,7 @@ class HandleCollisionsAction(Action):
         ball = cast["ball"][0]
         position = ball.get_position()
         ball_y = position.get_y()
-        if ball_y >= constants.MAX_Y -1: # - 1 to test but +2 to run game
+        if ball_y >= constants.MAX_Y +2: # - 1 to test but +2 to run game
             #sys.exit()
             velocity = ball.get_velocity()
             ball.set_velocity(velocity.reverse_y())
@@ -115,7 +115,17 @@ class HandleCollisionsAction(Action):
             velocity = ball.get_velocity()
             ball.set_velocity(velocity.reverse_y())
 
-    def paddle_boundaries (self,cast):
-        pass
+    def paddle_boundaries(self,cast):
+        paddle = cast["paddle"][0]
+        position = paddle.get_position()
+        paddle_x = position.get_x()
+        paddle_y = position.get_y()
+        if paddle_x + len(paddle.get_text()) >= constants.MAX_X:
+            velocity = paddle.get_velocity()
+            paddle.set_velocity(Point(0,0))
+            paddle.set_position(Point(paddle_x-3,paddle_y))
+        elif paddle_x <= 0:
+            paddle.set_velocity(Point(0,0))
+            paddle.set_position(Point(paddle_x+3,paddle_y))
 
 
