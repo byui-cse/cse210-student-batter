@@ -48,7 +48,7 @@ class Director:
             self._cue_action('output')
             # Maximum delay before the paddle wall collision doesn't work
             # This is done to balance CPU time with reduced input lag
-            sleep(0.017)
+            sleep(0.016)
         
         # Stop the update thread if it's alive on game exit
         if update_t.is_alive():
