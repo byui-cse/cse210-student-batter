@@ -11,7 +11,6 @@ class HandleCollisionsAction(Action):
     """
 
     def execute(self, cast):
-        # TODO:
         """Executes the action using the given actors.
 
         Args:
@@ -20,8 +19,14 @@ class HandleCollisionsAction(Action):
         self._paddle = cast.paddle_parts
         self._ball = cast.ball
         self._bricks = cast.bricks
+        self._top = cast.top_parts
+        self._side = cast.side_parts
+        self._bottom = cast.bottom_parts
         self._check_brick_collision()
         self._check_paddle_collision()
+        self._check_top_collision()
+        self._check_side_collision()
+        self._check_bottom_collision()
         
     def _check_brick_collision(self):
         projected_pos = self._calc_ball_direction()
@@ -40,6 +45,27 @@ class HandleCollisionsAction(Action):
                 end_vel = start_vel.reverse_y()
                 self._ball.set_velocity(end_vel)
 
+    def _check_top_collision(self):
+        projected_pos = self._calc_ball_direction()
+        for top_part in self._top:
+            if top_part.get_position().equals(projected_pos):
+                start_vel = self._ball.get_velocity()
+                end_vel = start_vel.reverse_y()
+                self._ball.set_velocity(end_vel)
+
+    def _check_side_collision(self):
+        projected_pos = self._calc_ball_direction()
+        for side_part in self._side:
+            if side_part.get_position().equals(projected_pos):
+                start_vel = self._ball.get_velocity()
+                end_vel = start_vel.reverse_x()
+                self._ball.set_velocity(end_vel)
+
+    def _check_bottom_collision(self):
+        projected_pos = self._calc_ball_direction()
+        for bottom_part in self._bottom:
+            if bottom_part.get_postition().equals(projected_pos):
+                return True
 
 
     def _calc_ball_direction(self):
@@ -55,18 +81,3 @@ class HandleCollisionsAction(Action):
             y = 1
         return ball_pos.add(Point(x, y))
 
-        
-
-
-
-
-"""Example from RFK:        
-        marquee = cast["marquee"][0] # there's only one
-        robot = cast["robot"][0] # there's only one
-        artifacts = cast["artifact"]
-        marquee.set_text("")
-        for artifact in artifacts:
-            if robot.get_position().equals(artifact.get_position()):
-                description = artifact.get_description()
-                marquee.set_text(description) 
-        """
