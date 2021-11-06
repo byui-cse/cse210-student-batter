@@ -23,8 +23,16 @@ class OutputService:
     def clear_screen(self):
         """Clears the Asciimatics buffer for the next rendering.""" 
         self._screen.clear_buffer(7, 0, 0)
-        self._screen.print_at("-" * constants.MAX_X, 0, 0, 7)
-        self._screen.print_at("-" * constants.MAX_X, 0, constants.MAX_Y, 7)
+        self._draw_border()
+    
+    def _draw_border(self):
+        top_border = '╔' + ("═" * (constants.MAX_X - 1)) + '╗'
+        bottom_border = '╚' + ("═" * (constants.MAX_X - 1)) + '╝'
+        self._screen.print_at(top_border, 0, 0, 7)
+        self._screen.print_at(bottom_border, 0, constants.MAX_Y, 7)
+        for y in range(1, constants.MAX_Y):
+            self._screen.print_at('║', 0, y, 7)
+            self._screen.print_at('║', constants.MAX_X, y, 7)
         
     def draw_actor(self, actor):
         """Renders the given actor's text on the screen.
