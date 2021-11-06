@@ -58,6 +58,6 @@ class HandleCollisionsAction(Action):
         # Makes the ball bounce on the paddle
         for i in range(0, 11):
             if ball.get_position().equals(paddle.get_position().add(Point(i, 0))):
-                ball.set_text("&")
+                ball.set_text("≡")
                 ball.set_velocity(ball.get_velocity().mirror())
    

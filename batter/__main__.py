@@ -38,7 +38,7 @@ def main(screen):
     position = Point(x, y) #Start at the half part of the ball
     velocity = Point(1, -1) 
     ball = Actor()
-    ball.set_text("@")
+    ball.set_text("◉")
     ball.set_position(position)
     ball.set_velocity(velocity)
     cast["ball"] = [ball]
