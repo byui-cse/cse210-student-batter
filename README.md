@@ -43,4 +43,4 @@ root                    (project root folder)
 Jennifer Clark  email Jennifer.c.schultz@gmail.com
 Kevin Espinoza robert.kevin.espinoza@gmail.com
 Benjamin Welsch email bwelsch@byui.edu
-
+Ronaldo Martins Schmidt ronaldomschmidt@gmail.com
