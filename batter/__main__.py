@@ -26,7 +26,8 @@ def main(screen):
     handle_collisions_action = HandleCollisionsAction()
     draw_actors_action = DrawActorsAction(output_service)
     
-    script["input"] = [control_actors_action, move_player_action]
+    script["input"] = [control_actors_action]
+    script['player'] = [move_player_action]
     script["update"] = [move_actors_action, handle_collisions_action]
     script["output"] = [draw_actors_action]
 

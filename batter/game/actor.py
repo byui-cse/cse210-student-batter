@@ -85,4 +85,5 @@ class Actor:
         Args:
             position (Point): The given velocity.
         """
-        self._velocity = velocity
+        if type(velocity) is Point:
+            self._velocity = velocity
