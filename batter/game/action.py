@@ -1,3 +1,8 @@
+""" Action module
+Contains Action class and associated utilities. Used in
+executing actions within the gameplay.
+"""
+
 class Action:
     """A code template for a thing done in a game. The responsibility of 
     this class of objects is to interact with actors to change the state of the game. 
