@@ -4,8 +4,10 @@ Module output_service containing class OutputService and its corresponding metho
 It draws the actors on the terminal.
 
 """
+
+#import sys
 from game import constants
-from asciimatics.widgets import Frame
+#from asciimatics.widgets import Frame
 
 class OutputService:
     """Outputs the game state. The responsibility of the class of objects 
@@ -34,8 +36,8 @@ class OutputService:
             self (OutputService): An instance of OutputService.
         """
         self._screen.clear_buffer(7, 0, 0)
-        self._screen.print_at("-" * constants.MAX_X, 0, 0, 7)
-        self._screen.print_at("-" * constants.MAX_X, 0, constants.MAX_Y, 7)
+        self._screen.print_at("`" * (constants.MAX_X), 0, 0, 7)
+        self._screen.print_at("-" * (constants.MAX_X + constants.PADDLE_LENGTH // 2), 0, constants.MAX_Y, 7)
 
     def draw_actor(self, actor):
         """Renders the given actor's text on the screen, including

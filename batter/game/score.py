@@ -1,10 +1,10 @@
 """ Module score containing class Score and its corresponding
 methods.It is used to track the points earned by player.
 """
-import random
-from game import constants
+#import random
+#from game import constants
 from game.actor import Actor
-from game.point import Point
+#from game.point import Point
 
 class Score(Actor):
     """Points earned. The responsibility of Score is 

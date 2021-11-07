@@ -49,5 +49,3 @@ class MoveActorsAction(Action):
         y = 1 + (y1 + y2 - 1) % (constants.MAX_Y - 1)
         position = Point(x, y)
         actor.set_position(position)
-      
-

@@ -1,15 +1,15 @@
 """Module handle_collisions_action containing class HandleCollisionsAction
 and its corresponding methods. It handles actor's collisions.
 """
-import random
-from time import sleep
-from game import director
-from game import output_service
+#import random
+#from time import sleep
+#from game import director
+#from game import output_service
 from game import constants
 from game.action import Action
 from game.point import Point
-from game.score import Score
-from game.lives import Lives
+#from game.score import Score
+#from game.lives import Lives
 
 class HandleCollisionsAction(Action):
     """A code template for checking collisions. The responsibility of 
@@ -46,30 +46,31 @@ class HandleCollisionsAction(Action):
 
         self.checkPlay()
         
-        item_counter = 0
+        brick_index = 0
         for brick in self.bricks:
             if ball.get_position().equals(brick.get_position()):
                 direction = ball.get_velocity().reverse_y()
                 direction = direction.random_velocity_generator() 
                 ball.set_velocity(direction)
-                del self.bricks[item_counter]     
+                del self.bricks[brick_index]
                 score.add_points(1)
-            item_counter += 1
+            brick_index += 1
 
         # checking boundaries
-        check_laterals = ball.get_position().get_x()
-        check_top = ball.get_position().get_y()
+        check_x_limits = ball.get_position().get_x()
+        check_y_limits = ball.get_position().get_y()
 
-        if check_laterals == constants.MAX_X - 1 or check_laterals == 1:
+        if check_x_limits >= constants.MAX_X -1 or check_x_limits <= 1:
             direction = ball.get_velocity().reverse_x()
             ball.set_velocity(direction)
 
-        if check_top == 1:
+        if check_y_limits <= 1:
             direction = ball.get_velocity().reverse_y()
             direction = direction.random_velocity_generator()
             ball.set_velocity(direction)
 
-        if check_top == constants.MAX_Y -1:
+        #if check_y_limits == constants.MAX_Y -1:
+        if check_y_limits == paddle.get_position().get_y():
             x = paddle.get_position().get_x()
             for value in range(constants.PADDLE_LENGTH): 
                 paddle_range.append(x + value)

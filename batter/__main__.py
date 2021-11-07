@@ -1,7 +1,7 @@
 """Module main containing method main that handles all
 the datatype objects for the game."""
 import random
-from game import handle_collisions_action
+#from game import handle_collisions_action
 from game import constants
 from game.director import Director
 from game.actor import Actor
