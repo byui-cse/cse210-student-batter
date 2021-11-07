@@ -1,4 +1,3 @@
-
 """Module input_service containing class InputService
 and its corresponding methods. It detects user's input.
 """
@@ -29,7 +28,7 @@ class InputService:
         """
         self._screen = screen
         self._keys = {}
-
+                
         self._keys[97] = Point(-1, 0)  # a
         self._keys[100] = Point(1, 0) # d
         

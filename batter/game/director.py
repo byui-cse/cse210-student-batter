@@ -18,7 +18,6 @@ class Director:
         self (Director): An instance of Director.
         _cast (dictionary): The game actors {key: name, value: object}
         _script (dictionary): The game actions {key: tag, value: object}
-        keep_playing(Director): Whether the game continue or not
     """
     def __init__(self, cast, script):
         """The class constructor.
@@ -33,17 +32,8 @@ class Director:
         
      
     def start_game(self):
-        """Starts the game loop to control the sequence of play.
-            Args:
-                self: An instance of start game
-            Attributes:
-                while(loop): controls the sequence of play
-                fianl_score: displays score
-                number_of_bricks: display bricks
-
-
-        """
-        
+        """Starts the game loop to control the sequence of play."""
+        #main loop of the game
         while self._keep_playing:
             self._cue_action("input")
             self._cue_action("update")
@@ -52,7 +42,7 @@ class Director:
             self._keep_playing = self._script["update"][1].checkPlay()
             sleep(constants.FRAME_LENGTH)
 
-        
+        #messages at the end
         final_score = self._cast["score"][0]._points
         number_of_bricks = self._cast["brick"]
         self._cast = {} 

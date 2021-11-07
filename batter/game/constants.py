@@ -1,6 +1,4 @@
 """Module constants containing all the main parameters for the game.
-    Stereotype:
-        Information holder
 """
 import os
 

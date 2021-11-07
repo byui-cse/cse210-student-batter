@@ -1,7 +1,6 @@
 """Module draw_actors_action containing class DrawActorsAction
 and its corresponding methods. It translates user input into paddle's
 movement. 
-
 """
 from game.action import Action
 
