@@ -1,6 +1,8 @@
+
 """Module move_actors_action containing class MoveActorsAction
 and its corresponding methods. It moves actors to their new position.
 """
+
 from game import constants
 from game.action import Action
 from game.point import Point
@@ -15,7 +17,6 @@ class MoveActorsAction(Action):
     Attributes:
         _input_service (InputService): An instance of InputService.
     """
-
     def execute(self, cast):
         """Executes the action using the given actors.
 
@@ -24,8 +25,11 @@ class MoveActorsAction(Action):
         """
         for group in cast.values():
             for actor in group:
-                self._move_actor(actor)
 
+                if not actor.get_velocity().is_zero():
+                    self._move_actor(actor)
+
+                self._move_actor(actor)
 
     def _move_actor(self, actor):
         """Moves the given actor to its next position according to its 

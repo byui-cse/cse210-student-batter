@@ -23,11 +23,18 @@ def main(screen):
         Structurer
     Args:
         screen (Screen): An instance of Screen.
+    Attributes:
+        cast: create the cast {key: tag, value: list}
+        paddle: code to create the player or paddle the player will control
+        brick actors: create the bricks in the game
+        ball actor: creates the ball in the game
+        score: keeps the score for the game
+        lives actor: tracks the lives for the player
+        script: create the script {key: tag, value: list}
+        Director: starts the game
     """
-    # create the cast {key: tag, value: list}
     cast = {}
 
-    # paddle actor
     paddle = Actor()
     x = int(constants.MAX_X / 2) - constants.PADDLE_LENGTH // 2
     y = int(constants.MAX_Y - 1)
@@ -37,7 +44,6 @@ def main(screen):
     paddle.set_color('magenta')
     cast["paddle"] = [paddle]
 
-    # brick actors
     cast["brick"] = []
     for column in range(constants.BRICKS_LEFT_MARGIN, constants.MAX_X - constants.BRICKS_LEFT_MARGIN):
         for row in range(2, 6):
@@ -48,7 +54,6 @@ def main(screen):
             brick.set_color('blue')
             cast["brick"].append(brick)
 
-    # ball actor
     ball = Actor()
     x = int(random.randint(1, constants.MAX_X))
     y = int(random.randint(constants.MAX_Y // 2, constants.MAX_Y - 1))
@@ -60,7 +65,6 @@ def main(screen):
     ball.set_color('magenta')
     cast["ball"] = [ball]
     
-    # score actor
     score = Score()
     x = 1
     y = constants.MAX_Y
@@ -68,7 +72,6 @@ def main(screen):
     score.set_position(position)
     cast["score"] = [score]
 
-    # lives actor
     lives = Lives()
     x = constants.MAX_X - len(lives.get_text()) - 1
     y = constants.MAX_Y
@@ -76,7 +79,6 @@ def main(screen):
     lives.set_position(position)
     cast["lives"] = [lives]
 
-    # create the script {key: tag, value: list}
     script = {}
 
     input_service = InputService(screen)
@@ -90,7 +92,6 @@ def main(screen):
     script["update"] = [move_actors_action, handle_collisions_action]
     script["output"] = [draw_actors_action]
 
-    # start the game
     director = Director(cast, script)
     director.start_game()
 
