@@ -52,6 +52,7 @@ root                    (project root folder)
 
 ## Authors
 * Julio Rubio | esc18010@byui.edu
+* Rachel Vargas | var18013@byui.edu
+* Grant Boreham | bor21004@byui.edu
 * Komlavi Djossou | djo21002@byui.edu
 * Paul Oranye | ora21001@byui.edu
-* Rachel Vargas | var18013@byui.edu
