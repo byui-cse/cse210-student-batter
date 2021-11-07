@@ -2,7 +2,7 @@
 methods.It is used to add elements to the gameplay and manage
 objects in the game.
 """
-#from game import constants
+
 from game.point import Point
 
 class Actor:
