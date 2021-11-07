@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+""" Imports point from game.point. Imports keyboardEvent from asciimatics.event.
+A class of InputService which is responsible with detection and communication of player key clicks.
+=======
 """Module input_service containing class InputService
 and its corresponding methods. It detects user's input.
+>>>>>>> a40ca14d4374034347e44bf841315a49a3284175
 """
 import sys
 import msvcrt
