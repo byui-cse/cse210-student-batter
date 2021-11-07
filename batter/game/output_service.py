@@ -4,10 +4,8 @@ Module output_service containing class OutputService and its corresponding metho
 It draws the actors on the terminal.
 
 """
-
-#import sys
 from game import constants
-#from asciimatics.widgets import Frame
+
 
 class OutputService:
     """Outputs the game state. The responsibility of the class of objects 

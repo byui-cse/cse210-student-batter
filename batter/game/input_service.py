@@ -7,7 +7,6 @@ and its corresponding methods. It detects user's input.
 """
 import sys
 import msvcrt
-#from game import constants
 from game.point import Point
 from asciimatics.event import KeyboardEvent
 

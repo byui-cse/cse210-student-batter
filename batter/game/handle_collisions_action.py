@@ -1,15 +1,10 @@
 """Module handle_collisions_action containing class HandleCollisionsAction
 and its corresponding methods. It handles actor's collisions.
 """
-#import random
-#from time import sleep
-#from game import director
-#from game import output_service
 from game import constants
 from game.action import Action
 from game.point import Point
-#from game.score import Score
-#from game.lives import Lives
+
 
 class HandleCollisionsAction(Action):
     """A code template for checking collisions. The responsibility of 

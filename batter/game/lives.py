@@ -1,10 +1,8 @@
 """Module lives containing class Lives and its corresponding
 methods. It keeps track of player's lives.
 """
-#import random
 from game import constants
 from game.actor import Actor
-#from game.point import Point
 
 
 class Lives(Actor):

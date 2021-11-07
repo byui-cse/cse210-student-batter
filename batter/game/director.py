@@ -2,12 +2,9 @@
 methods.It is used to control the sequence of play.
 """
 from time import sleep
-#from game import input_service
-#from game import constants, handle_collisions_action
 from game import constants
 from game.actor import Actor
 from game.point import Point
-#from game.score import Score
 
 
 class Director:
@@ -77,7 +74,7 @@ class Director:
             _final_Text = Actor()
             _final_Text.set_color("yellow")
             _final_Text.set_text(
-                "\t\t\tYou Won!.\n\n\t\t\t Your final score is: " + str(final_score))
+                "\t\t\t\tYou Won!.\n\n\t\t\t\t Your final score is: " + str(final_score))
             x = int((constants.MAX_X * 2/3) - len(_final_Text.get_text()))
             y = (constants.MAX_Y // 2) - 1
             position = Point(x, y)
