@@ -1,7 +1,9 @@
-"""Module output_service containing class OutputService and its corresponding
-methods. It draws the actors on the terminal.
+""" imports constants from game. Imports frame from asciimatics.widgets.
+A class of OutputService.
+Module output_service containing class OutputService and its corresponding methods. 
+It draws the actors on the terminal.
+
 """
-import sys
 from game import constants
 from asciimatics.widgets import Frame
 
