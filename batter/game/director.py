@@ -2,11 +2,13 @@
 methods.It is used to control the sequence of play.
 """
 from time import sleep
-from typing import final
-from game import constants, handle_collisions_action
+#from game import input_service
+#from game import constants, handle_collisions_action
+from game import constants
 from game.actor import Actor
 from game.point import Point
-from game.score import Score
+#from game.score import Score
+
 
 class Director:
     """A code template for a person who directs the game. The responsibility of 

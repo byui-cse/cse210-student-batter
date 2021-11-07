@@ -3,7 +3,7 @@ and its corresponding methods. It detects user's input.
 """
 import sys
 import msvcrt
-from game import constants
+#from game import constants
 from game.point import Point
 from asciimatics.event import KeyboardEvent
 
@@ -29,9 +29,7 @@ class InputService:
         """
         self._screen = screen
         self._keys = {}
-        
-        # self._keys[97] = Point(-constants.PADDLE_SPEED_FACTOR, 0)  # a
-        # self._keys[100] = Point(constants.PADDLE_SPEED_FACTOR, 0) # d
+                
         self._keys[97] = Point(-1, 0)  # a
         self._keys[100] = Point(1, 0) # d
         
