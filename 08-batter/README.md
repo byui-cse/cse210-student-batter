@@ -39,5 +39,4 @@ root                    (project root folder)
 
 ## Authors
 ---
-* Peter Benson Jr
-Email: peterbenson0001@gmail.com
+* # TODO: Add your names and emails here
